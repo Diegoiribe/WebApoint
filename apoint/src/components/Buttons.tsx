@@ -5,12 +5,21 @@ type ButtonsProps = {
   p: string
   size: string
   margin: string
+  hover?: string
 }
 
-const Buttons = ({ bg, color, text, p, size, margin }: ButtonsProps) => {
+const Buttons = ({
+  bg,
+  color,
+  text,
+  p,
+  size,
+  margin,
+  hover = bg
+}: ButtonsProps) => {
   return (
     <button
-      className="rounded-full"
+      className="rounded-xl"
       style={{
         backgroundColor: bg,
         color: color,
@@ -20,6 +29,8 @@ const Buttons = ({ bg, color, text, p, size, margin }: ButtonsProps) => {
         fontSize: size,
         margin: margin
       }}
+      onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = hover)}
+      onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = bg)}
     >
       {text}
     </button>

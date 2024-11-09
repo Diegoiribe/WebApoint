@@ -1,16 +1,19 @@
 import Buttons from '../components/Buttons'
 import CardPricing from '../components/CardPricing'
 import TypedText from '../components/TypedText'
+import Table from '../components/Table'
+import Questions from '../components/Questions'
+import Footer from '../components/Footer'
 
 const Home = () => {
   return (
     <div
-      className=" flex flex-col justify-center items-center gap-5"
+      className="flex flex-col items-center justify-center gap-5 "
       style={{
         background: 'linear-gradient(100deg, #0079ec 30.25%, #43b1fe)'
       }}
     >
-      <p className="text-4xl text-white flex font-bold mt-72 ">
+      <p className="flex text-4xl font-bold text-white mt-72 ">
         Apoint
         <span className="flex items-end mb-[7px] font-black">
           <svg
@@ -29,7 +32,7 @@ const Home = () => {
           </svg>
         </span>
       </p>
-      <h1 className="text-7xl text-white font-bold max-w-4xl text-center mb-5 overflow-hidden">
+      <h1 className="max-w-4xl mb-5 overflow-hidden font-bold text-center text-white text-7xl">
         Una gran forma de conectar tu mundo.
       </h1>
       <Buttons
@@ -71,7 +74,7 @@ const Home = () => {
         margin="0 0 11rem"
       />
       <div className="w-full bg-[#f5f5f7] pt-[139px]">
-        <div className="flex flex-col items-center gap-5 max-w-6xl mx-auto pt-20 pb-36">
+        <div className="flex flex-col items-center max-w-6xl gap-5 pt-20 mx-auto pb-36">
           <h1 className="text-[80px] font-extrabold text-[#1d1d1f] leading-none overflow-hidden ml-[14.5px] mb-[77px] p-1">
             Cuidamos tus cosas como tú lo harías.
           </h1>
@@ -92,7 +95,7 @@ const Home = () => {
             lista para que la compartas, dondequiera que te encuentres.
           </p>
 
-          <div className="flex gap-7 w-full mb-3">
+          <div className="flex w-full mb-3 gap-7">
             <div className="w-1/2 bg-white py-[50px] px-[50px] rounded-3xl flex flex-col gap-5">
               <p className="text-[20px] font-bold text-[#6e6e73] px-5">
                 <span className="text-[#1d1d1f]">Fotos en iCloud</span> guarda
@@ -139,8 +142,8 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="flex gap-7 w-full">
-            <div className="w-1/2 bg-white  rounded-3xl flex flex-col gap-5">
+          <div className="flex w-full gap-7">
+            <div className="flex flex-col w-1/2 gap-5 bg-white rounded-3xl">
               <div className=" bg-[#e8e7ec] py-[60px] px-[70px]">
                 <div
                   className="w-full h-[336px] bg-cover bg-center bg-no-repeat"
@@ -178,7 +181,7 @@ const Home = () => {
         </div>
       </div>
       <div className="w-full bg-white pt-[100px] -mt-5">
-        <div className="flex flex-col items-center gap-5 max-w-6xl mx-auto pt-20 pb-36">
+        <div className="flex flex-col items-center max-w-6xl gap-5 pt-20 mx-auto pb-36">
           <h1 className="text-[81px] font-extrabold text-[#1d1d1f] leading-none overflow-hidden ml-[14.5px] mb-[77px] p-1">
             Todo lo que necesitas, en todos lados.
           </h1>
@@ -220,7 +223,7 @@ const Home = () => {
         </div>
       </div>
       <div className="bg-[#f5f5f7] w-full -mt-5 pt-[100px]">
-        <div className="flex flex-col items-center gap-7 max-w-6xl mx-auto pt-20 pb-36">
+        <div className="flex flex-col items-center max-w-6xl pt-20 mx-auto gap-7 pb-36">
           <div className="w-full h-[170px] mb-[77px]  overflow-hidden">
             <TypedText />
           </div>
@@ -267,7 +270,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="flex flex-col max-w-2xl gap-10 items-center justify-center mt-32">
+          <div className="flex flex-col items-center justify-center max-w-2xl gap-10 mt-32 mb-12">
             <h1 className="text-[73px] font-bold text-[#1d1d1f] leading-none overflow-hidden text-center">
               Elige el plan que mas te conviene.
             </h1>
@@ -275,16 +278,24 @@ const Home = () => {
               Todos los planes de iCloud+ se pueden compartir con tu familia.
             </p>
             <Buttons
-              text="Actualizar a iCloud+"
-              bg="#000000"
+              text="Actualizar a Apoint+"
+              bg="#0077ed"
               color="#ffffff"
               p="8px 22px"
               size="19px"
               margin="0"
             />
           </div>
+          <Table />
+          <div className="flex flex-col items-center justify-center max-w-2xl gap-10 mt-32 mb-12">
+            <h1 className="text-[70px] font-bold text-[#1d1d1f] leading-none overflow-hidden text-center pb-2">
+              Las respuestas a tus preguntas.
+            </h1>
+          </div>
+          <Questions />
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

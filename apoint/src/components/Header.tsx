@@ -1,5 +1,7 @@
-import { useState, useEffect } from 'react'
 import Buttons from './Buttons'
+import ln from '../assets/ln.svg'
+import lb from '../assets/lb.svg'
+import { useState, useEffect } from 'react'
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -9,7 +11,7 @@ const Header = () => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
       // Si el scroll es mayor a 44px, cambiamos el estado
-      if (scrollTop > 4) {
+      if (scrollTop > 958) {
         setIsScrolled(true)
       } else {
         setIsScrolled(false)
@@ -24,87 +26,61 @@ const Header = () => {
   }, [])
 
   return (
-    <header className="flex flex-col items-center max-w-5xl mx-auto">
-      <ul
-        className={`flex justify-between w-full items-center h-[44px] transition-opacity duration-300 ${
-          isScrolled ? 'opacity-0' : 'opacity-100'
-        }`}
-      >
-        <li className="text-xs font-normal text-[#000000CC]">Logo</li>
-        <li className="text-xs font-normal text-[#000000CC]">Apoint</li>
-        <li className="text-xs font-normal text-[#000000CC]">Equipo</li>
-        <li className="text-xs font-normal text-[#000000CC]">Planes</li>
-        <li className="text-xs font-normal text-[#000000CC]">Soporte</li>
-        <li className="w-56 h-6 bg-neutral-200 rounded-full p-1">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            className="size-4"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
-            />
-          </svg>
-        </li>
-        <li>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke-width="2"
-            stroke="currentColor"
-            className="size-4"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
-            />
-          </svg>
-        </li>
-      </ul>
-
-      {/* Div con filtro y color dinámico, que se hace fixed después del scroll */}
+    <header className="fixed z-10 flex items-center justify-center w-screen p-5">
       <div
         className={`${
-          isScrolled ? ' border-b fixed' : 'border-none relatvie'
-        } w-full bg-white z-0 transition-all duration-300 top-0 border-neutral-300`}
+          isScrolled ? 'w-[72rem]' : 'w-[92rem]'
+        } rounded-lg h-[5rem]  flex items-center justify-around p-3 shadow-md transition-all duration-300 border-neutral-300`}
         style={{
-          backdropFilter: 'saturate(180%) blur(20px)',
-          backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.8)' : '#ffffff' // Color dinámico
+          backdropFilter: 'blur(20px)', // Ajusta la intensidad del blur aquí
+          backgroundColor: isScrolled ? '#007aec69' : '#449f3c69' // Color de fondo blanco con opacidad
         }}
       >
-        <div className="flex justify-between max-w-5xl mx-auto h-[52px] items-center">
-          <div className="text-[21px] font-semibold flex">
-            Apoint
-            <span className="flex items-end mb-[7px] font-black">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="3"
-                stroke="currentColor"
-                className="size-3.5"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 4.5v15m7.5-7.5h-15"
-                />
-              </svg>
-            </span>
-          </div>
+        <div
+          className="w-[7rem] h-full bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: isScrolled ? `url(${lb})` : `url(${ln})`
+          }}
+        ></div>
+        <div className="flex gap-12">
+          <p
+            className={`${
+              isScrolled ? 'text-white' : 'text-[#1d1d1f]'
+            } font-bold  text-lg`}
+          >
+            Noticias
+          </p>
+          <p
+            className={`${
+              isScrolled ? 'text-white' : 'text-[#1d1d1f]'
+            } font-bold text-lg`}
+          >
+            Planes
+          </p>
+          <p
+            className={`${
+              isScrolled ? 'text-white' : 'text-[#1d1d1f]'
+            } font-bold text-lg`}
+          >
+            Soporte
+          </p>
+        </div>
+        <div className="flex gap-5">
           <Buttons
-            bg="#0076df"
-            color="white"
-            text="Log in"
-            p="3px 20px"
-            size="12px"
+            text="Probar gratis"
+            bg={isScrolled ? '#ffffff' : '#1d1d1f'}
+            color={isScrolled ? '#1d1d1f' : '#fff'}
+            p="8px 22px"
+            size="17px"
+            margin="0"
+            hover="#4ade80"
+          />
+          <Buttons
+            text="Iniciar sesión"
+            bg={isScrolled ? '#fff' : '#1d1d1f'}
+            color={isScrolled ? '#1d1d1f' : '#fff'}
+            p="8px 40px"
+            size="17px"
             margin="0"
           />
         </div>
