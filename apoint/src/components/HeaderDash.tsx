@@ -9,31 +9,38 @@ type HeaderProps = {
 const HeaderDash = ({ color, active }: HeaderProps) => {
   return (
     <div
-      className={`flex flex-row justify-between col-start-1 px-5 py-2 transition-all duration-700 ease-in-out col-span-full`}
+      className={`flex flex-row justify-between col-start-1 px-5 py-2 transition-all duration-700 ease-in-out col-span-full fixed top-0 w-full z-10`}
       style={{
         background: 'rgba(56, 56, 61, .6)',
         backdropFilter: 'blur(15px) saturate(86%)',
         opacity: active ? 1 : 0.8, // Suavizar la transición con opacidad si es necesario
-        height: active ? '65px' : '45px',
-        padding: active ? '12px 56px 12px 64px' : '8px 20px'
+        height: active ? '50px' : '45px',
+        padding: active ? '8px 56px 8px 64px' : '8px 20px'
       }}
     >
       {active ? (
         <>
-          <Buttons
-            text="Add Widget"
-            bg="#ffffff"
-            color="#000"
-            p="4px 22px"
-            size="17px"
-            margin="0 0"
-          ></Buttons>
+          <div className="flex flex-row items-center gap-2 ">
+            <div
+              className="h-[29px] bg-center bg-no-repeat bg-cover rounded-full w-7"
+              style={{
+                backgroundImage: `url(${icono})`
+              }}
+            ></div>
+
+            <h1
+              className="text-lg font-bold text-center"
+              style={{ color: color }}
+            >
+              Lettuce
+            </h1>
+          </div>
           <Buttons
             text="Done"
             bg="rgba(0, 0, 0, .75)"
             color="#fff"
-            p="4px 22px"
-            size="17px"
+            p="0px 22px"
+            size="14px"
             margin="0 0"
           ></Buttons>
         </>

@@ -88,7 +88,7 @@ const Dashboard = () => {
         <HeaderDash color="white" active={activeEdit} />
 
         <div
-          className={`transition-all duration-500 grid grid-cols-12 p-16 gap-4 ${
+          className={`transition-all duration-500 grid grid-cols-12 p-16 mt-6 gap-4 ${
             activeEdit ? 'col-start-1 col-end-6' : 'col-start-1 col-end-4'
           }`}
         >
@@ -177,7 +177,7 @@ const Dashboard = () => {
                   text="Registrar cita"
                   bg="#fff"
                   color="#000000"
-                  p="6px 28px"
+                  p="6px 55px"
                   size="14px"
                   margin="0 0 0rem"
                 ></Buttons>
@@ -222,7 +222,7 @@ const Dashboard = () => {
         </div>
 
         <div
-          className={`transition-all duration-500 grid self-start grid-cols-11 col-start-4 col-end-11 gap-6 p-16 ${
+          className={`transition-all duration-500 grid self-start grid-cols-11 mt-6 col-start-4 col-end-11 gap-6 p-16 ${
             activeEdit ? 'col-start-6 col-end-13' : 'col-start-4 col-end-11'
           }`}
         >
@@ -424,7 +424,7 @@ const Dashboard = () => {
           </div>
         </div>
         <div
-          className="col-start-13 col-end-14 m-5 h-[75px] w-[70px] rounded-2xl shadow-xl transition-all duration-500 ease-out transform hover:h-[389px] flex justify-center items-center flex-col group cursor-pointer mt-16"
+          className="col-start-13 col-end-14 m-5 h-[75px] w-[70px] rounded-2xl shadow-xl transition-all duration-500 ease-out transform hover:h-[389px] flex justify-center items-center flex-col group cursor-pointer mt-24"
           style={{
             background: 'rgba(56, 56, 61, .6)',
             backdropFilter: 'blur(15px)'
