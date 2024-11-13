@@ -5,12 +5,12 @@ const BarCircular = () => {
   const percentage = 56
 
   return (
-    <div style={{ position: 'relative', width: '90px', height: '90px' }}>
+    <div style={{ position: 'relative', width: '175px', height: '175px' }}>
       <CircularProgressbar
         value={percentage}
         styles={buildStyles({
-          pathColor: '#67c8ff',
-          trailColor: '#f5f5f5',
+          pathColor: '#ffffff',
+          trailColor: '#000000A5',
           pathTransitionDuration: 0.5,
           pathTransition: 'none'
         })}
@@ -24,12 +24,12 @@ const BarCircular = () => {
           transform: 'translate(-50%, -50%)',
           textAlign: 'center',
           fontWeight: 'bold',
-          color: '#67c8ff'
+          color: '#f5f5f5'
         }}
       >
-        <span style={{ fontSize: '20px' }}>{`${percentage}`}</span>
+        <span style={{ fontSize: '36px' }}>{`${percentage}`}</span>
         <span
-          className="font-normal text-[#1d1d1f]"
+          className="font-normal text-[#f5f5f5]"
           style={{ fontSize: '10px' }}
         >
           Clientes

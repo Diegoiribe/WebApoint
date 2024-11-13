@@ -36,7 +36,7 @@ export const Menu = ({ top }: MenuProps) => {
   return (
     <div
       className="flex justify-center flex-col absolute w-[270px] h-[70px] bg-[#1c1c1e] rounded-lg shadow-2xl border-[.2px] border-[#7474803f] p-1 z-20"
-      style={{ top: top, left: '69.25%' }}
+      style={{ top: top, left: '69%' }}
     >
       <div className="flex items-center p-2  hover:bg-[rgba(116,116,128,0.25)] rounded-lg leading-none cursor-pointer">
         <span className="">
