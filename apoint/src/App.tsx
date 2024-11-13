@@ -10,10 +10,18 @@ import Dashboard from './pages/Dashboard'
 import './App.css'
 import HomeTwo from './pages/HomeTwo'
 
+function Layout() {
+  const location = useLocation()
+  return <>{location.pathname !== '/dashboard' && <Header />}</>
+}
+
 function App() {
   return (
     <div className="App">
       <Router>
+        {/* Usa el Layout para manejar Header */}
+        <Layout />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<HomeTwo />} />
